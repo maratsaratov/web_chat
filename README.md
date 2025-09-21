@@ -11,25 +11,27 @@
 - ⏰ Автоматическая очистка неактивных сессий
 - 🩺 Health-check эндпоинты для мониторинга
 
-## 📦 Структура проекта
+## Структура проекта
 
+```
 chat-app/
-├── app.py # Главный файл приложения
-├── config.py # Конфигурационные параметры
-├── requirements.txt # Зависимости проекта
+├── app.py                 # Главный файл приложения
+├── config.py             # Конфигурационные параметры
+├── requirements.txt      # Зависимости проекта
 ├── models/
-│ ├── init.py
-│ └── session.py # Модель сессии чата
+│   ├── __init__.py
+│   └── session.py       # Модель сессии чата
 ├── routes/
-│ ├── init.py
-│ ├── api.py # API эндпоинты
-│ └── frontend.py # Frontend роуты
+│   ├── __init__.py
+│   ├── api.py           # API эндпоинты
+│   └── frontend.py      # Frontend роуты
 ├── services/
-│ ├── init.py
-│ └── gigachat_service.py # Сервис работы с GigaChat
+│   ├── __init__.py
+│   └── gigachat_service.py # Сервис работы с GigaChat
 └── utils/
-├── init.py
-└── session_manager.py # Менеджер сессий
+    ├── __init__.py
+    └── session_manager.py  # Менеджер сессий
+```
 
 ## 📋 Описание файлов
 
