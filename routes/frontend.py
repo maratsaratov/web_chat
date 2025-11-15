@@ -11,12 +11,12 @@ def serve_frontend():
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Чат с GigaChat</title>
+        <title>Чат с ботом-психологом</title>
         <style>
             * { margin: 0; padding: 0; box-sizing: border-box; }
             body { 
                 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                background: linear-gradient(135deg, #10b981 0%, #ecf9f3 100%); 
                 height: 100vh; 
                 display: flex; 
                 justify-content: center; 
@@ -29,7 +29,7 @@ def serve_frontend():
                 display: flex; flex-direction: column; overflow: hidden; 
             }
             .chat-header { 
-                background: #4a5568; color: white; padding: 20px; 
+                background: #059669; color: white; padding: 20px; 
                 text-align: center; font-weight: bold; font-size: 18px; 
             }
             .chat-messages { 
@@ -41,7 +41,7 @@ def serve_frontend():
                 line-height: 1.4; animation: fadeIn 0.3s ease-in; 
             }
             .user-message { 
-                align-self: flex-end; background: #667eea; color: white; 
+                align-self: flex-end; background: #10b981; color: white; 
                 border-bottom-right-radius: 6px; 
             }
             .ai-message { 
@@ -57,13 +57,13 @@ def serve_frontend():
                 border-radius: 25px; outline: none; font-size: 14px; 
                 transition: border-color 0.3s; 
             }
-            .message-input:focus { border-color: #667eea; }
+            .message-input:focus { border-color: #10b981; }
             .send-button { 
-                padding: 12px 20px; background: #667eea; color: white; 
+                padding: 12px 20px; background: #10b981; color: white; 
                 border: none; border-radius: 25px; cursor: pointer; 
                 font-weight: bold; transition: background 0.3s; 
             }
-            .send-button:hover { background: #5a67d8; }
+            .send-button:hover { background: #059669; }
             .send-button:disabled { background: #cbd5e0; cursor: not-allowed; }
             .typing-indicator { 
                 align-self: flex-start; background: #f7fafc; 
@@ -88,10 +88,10 @@ def serve_frontend():
     </head>
     <body>
         <div class="chat-container">
-            <div class="chat-header">💬 Чат с GigaChat</div>
+            <div class="chat-header">💬 Чат с ботом-психологом</div>
             <div class="chat-messages" id="chatMessages">
                 <div class="welcome-message">
-                    Привет! Я ваш AI-ассистент. Задайте мне любой вопрос.
+                    Привет! Я твой корпоративный AI-психолог. Задайте мне любой волнующий тебя вопрос.
                 </div>
             </div>
             <div class="chat-input">

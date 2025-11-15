@@ -6,7 +6,7 @@ class Config:
     SSL_CONTEXT.check_hostname = False
     SSL_CONTEXT.verify_mode = ssl.CERT_NONE
     
-    CREDENTIALS = "your_GigaChat_token"
+    CREDENTIALS = "YOUR_CREDENTIALS_HERE"
     SESSION_TIMEOUT_HOURS = 24
     MAX_MESSAGES_PER_SESSION = 200
     

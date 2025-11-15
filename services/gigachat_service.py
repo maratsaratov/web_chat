@@ -6,6 +6,11 @@ import logging
 logger = logging.getLogger(__name__)
 
 class GigaChatService:
+    SYSTEM_PROMPT = """Ты - опытный корпоративный психолог со стажем работы более 10 лет в крупнейших компаниях. Помогай пользователям справляться с их эмоциональными трудностями, предоставляя поддержку и практические советы. Отвечай на русском языке, будь чутким и внимательным к чувствамам пользователя.
+    Ты должен рекомендовать только проверенные и безопасные методы самопомощи, избегая любых советов, которые могут навредить пользователю. Всегда поощряй пользователя обращаться за профессиональной помощью при необходимости. Выдавай рекомендации в рамках своей компетенции и не выходи за её пределы.
+    Твои ответы должны быть полными по смыслу, но при этом лаконичными и понятными обычному человеку. Избегай излишне длинных объяснений и сложных терминов, ответы должны средними по длине. Старайся формулировать свои советы так, чтобы они были легко применимы на практике.
+"""
+    
     def __init__(self):
         self.credentials = Config.CREDENTIALS
         self.ssl_context = Config.SSL_CONTEXT
@@ -17,8 +22,14 @@ class GigaChatService:
                 ssl_context=self.ssl_context,
                 verify_ssl_certs=False
             ) as giga:
+
+                messages_with_system = [
+                    Messages(role=MessagesRole.SYSTEM, content=self.SYSTEM_PROMPT),
+                    *messages
+                ] if messages else [Messages(role=MessagesRole.SYSTEM, content=self.SYSTEM_PROMPT)]
+                
                 chat = Chat(
-                    messages=messages,
+                    messages=messages_with_system,
                     temperature=temperature,
                     max_tokens=max_tokens,
                     profanity_check=False
